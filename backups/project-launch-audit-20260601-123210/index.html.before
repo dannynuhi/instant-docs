@@ -14,7 +14,6 @@
     a { display:block; margin:8px 0; }
     .box { padding: 12px; border: 1px solid #ddd; margin: 15px 0; }
   </style>
-<link rel="stylesheet" href="/snapdocs-polish.css">
 </head>
 
 <body>
@@ -47,7 +46,6 @@
 
 <a href="/about.html">About SnapDocs</a>
 <a href="/privacy.html">Privacy Policy</a>
-<a href="/terms.html">Terms</a>
 <a href="/contact.html">Contact</a>
 
 </body>

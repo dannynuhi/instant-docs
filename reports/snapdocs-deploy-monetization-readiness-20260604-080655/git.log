@@ -1,0 +1,14 @@
+
+=== SCOPED CHANGED FILES ===
+ M index.html
+ M sitemap.xml
+?? MONETIZATION_STATUS.md
+?? backups/
+?? monetization.html
+?? reports/
+=== SENSITIVE STRING SCAN ON SCOPED FILES ===
+
+ 4 files changed, 49 insertions(+)
+ create mode 100644 MONETIZATION_STATUS.md
+ create mode 100644 monetization.html
+CURRENT_BRANCH=main
