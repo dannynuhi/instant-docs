@@ -256,6 +256,99 @@
     }
   }
 </style>
+
+<style id="formyro-monetization-structure-style">
+  .monetization-band {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 28px;
+  }
+  .ad-zone {
+    border: 1px dashed #c7d2ea;
+    border-radius: 18px;
+    background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+    min-height: 112px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6b7894;
+    font-size: 13px;
+    font-weight: 750;
+    text-align: center;
+    padding: 18px;
+  }
+  .ad-zone small {
+    display: block;
+    margin-top: 6px;
+    color: #8390a8;
+    font-weight: 600;
+  }
+  .affiliate-disclosure {
+    margin: 0 0 18px;
+    padding: 14px 16px;
+    border: 1px solid #dfe6f4;
+    border-radius: 14px;
+    background: #f8fbff;
+    color: #46536c;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+  .affiliate-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .affiliate-card {
+    border: 1px solid #e2e8f4;
+    border-radius: 18px;
+    background: #ffffff;
+    padding: 20px;
+    text-decoration: none;
+    box-shadow: 0 16px 42px rgba(12,24,56,0.06);
+    min-height: 170px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .affiliate-card strong {
+    display: block;
+    color: #071024;
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+  .affiliate-card span {
+    color: #4d5a72;
+    line-height: 1.5;
+    font-size: 15px;
+  }
+  .affiliate-card em {
+    color: #174fe7;
+    font-style: normal;
+    font-weight: 850;
+    margin-top: 16px;
+    font-size: 14px;
+  }
+  .monetization-note {
+    margin-top: 18px;
+    color: #68758d;
+    font-size: 13px;
+    line-height: 1.55;
+  }
+  @media (max-width: 980px) {
+    .affiliate-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  @media (max-width: 620px) {
+    .monetization-band {
+      padding: 24px 22px;
+    }
+    .affiliate-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
 </head>
 <body data-formyro-clean-rebuild="FORMYRO_CLEAN_HOMEPAGE_OVERWRITE_20260611-103925">
 <header class="topbar">
@@ -308,12 +401,60 @@
     </div>
   </section>
 
-  <section class="band" id="supplies">
-    <div class="section">
-      <h2>Recommended supplies</h2>
-      <p>Pair templates with everyday office essentials like folders, planners, labels, pens, and filing tools.</p>
+  
+
+<!-- FORMYRO_MONETIZATION_STRUCTURE_RESTORE_20260611-171428 MONETIZATION START -->
+<section class="monetization-band" aria-label="Sponsored placement area">
+  <div class="ad-zone" data-adsense-slot="top-content" data-ad-status="placeholder-until-adsense-approved">
+    Ad placement reserved
+    <small>Top content ad slot. Activate only after AdSense approval.</small>
+  </div>
+</section>
+
+<section class="section" id="supplies">
+  <div class="section-head">
+    <div>
+      <h2>Recommended office supplies</h2>
+      <p>Helpful supplies to pair with templates for organizing, printing, filing, planning, and everyday paperwork.</p>
     </div>
-  </section>
+  </div>
+
+  <p class="affiliate-disclosure">
+    Disclosure: Some recommended supplies may use affiliate links. We may earn a commission at no extra cost to you.
+  </p>
+
+  <div class="affiliate-grid" data-affiliate-placement="recommended-supplies">
+    <a class="affiliate-card" href="#folders" data-affiliate-slot="folders">
+      <span><strong>Folders and file organizers</strong>Keep printed templates, client documents, school papers, and household records sorted.</span>
+      <em>Add affiliate link</em>
+    </a>
+    <a class="affiliate-card" href="#binders" data-affiliate-slot="binders">
+      <span><strong>Binders and dividers</strong>Useful for planners, business forms, printable systems, and recurring office documents.</span>
+      <em>Add affiliate link</em>
+    </a>
+    <a class="affiliate-card" href="#labels" data-affiliate-slot="labels">
+      <span><strong>Labels and tabs</strong>Make filing systems easier to scan, update, and maintain.</span>
+      <em>Add affiliate link</em>
+    </a>
+    <a class="affiliate-card" href="#printer-paper" data-affiliate-slot="printer-paper">
+      <span><strong>Printer paper and ink</strong>Everyday basics for resumes, forms, planners, checklists, and templates.</span>
+      <em>Add affiliate link</em>
+    </a>
+  </div>
+
+  <p class="monetization-note">
+    Affiliate slots are structurally ready. Replace the placeholder anchors with approved affiliate URLs only after the affiliate program is confirmed.
+  </p>
+</section>
+
+<section class="monetization-band" aria-label="Mid page sponsored placement area">
+  <div class="ad-zone" data-adsense-slot="mid-content" data-ad-status="placeholder-until-adsense-approved">
+    Ad placement reserved
+    <small>Mid-content ad slot. Keep separated from buttons and template links.</small>
+  </div>
+</section>
+<!-- FORMYRO_MONETIZATION_STRUCTURE_RESTORE_20260611-171428 MONETIZATION END -->
+
 </main>
 
 <footer class="footer">
