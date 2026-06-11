@@ -1,0 +1,73 @@
+/* FORMYRO_EXACT_LIVE_HERO_PATCH_20260610-202204 CSS START */
+:root {
+  --formyro-hero-photo: url("/assets/brand/d.png");
+  --formyro-frame-blue: #0b45e8;
+}
+
+.fy-hero [class*="visual"],
+.fy-hero [class*="media"],
+.fy-hero [class*="frame"],
+.fy-hero .fy-hero-visual,
+.fy-hero .fy-hero-media,
+.fy-hero .fy-hero-frame,
+.fy-hero .hero-visual,
+.fy-hero .hero-media,
+.fy-hero .hero-frame,
+.fy-hero > :last-child {
+  background-image: var(--formyro-hero-photo) !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  border: 18px solid var(--formyro-frame-blue) !important;
+  border-radius: 34px !important;
+  overflow: hidden !important;
+  min-height: clamp(320px, 36vw, 560px) !important;
+  box-shadow: 0 26px 70px rgba(11, 69, 232, 0.18) !important;
+}
+
+.fy-hero [class*="visual"] img,
+.fy-hero [class*="media"] img,
+.fy-hero [class*="frame"] img,
+.fy-hero .fy-hero-visual img,
+.fy-hero .fy-hero-media img,
+.fy-hero .fy-hero-frame img,
+.fy-hero .hero-visual img,
+.fy-hero .hero-media img,
+.fy-hero .hero-frame img,
+.fy-hero > :last-child img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+
+.fy-hero [class*="visual"] svg,
+.fy-hero [class*="media"] svg,
+.fy-hero [class*="frame"] svg,
+.fy-hero .fy-hero-visual svg,
+.fy-hero .fy-hero-media svg,
+.fy-hero .fy-hero-frame svg,
+.fy-hero .hero-visual svg,
+.fy-hero .hero-media svg,
+.fy-hero .hero-frame svg,
+.fy-hero > :last-child svg {
+  opacity: 0 !important;
+}
+
+@media (max-width: 760px) {
+  .fy-hero [class*="visual"],
+  .fy-hero [class*="media"],
+  .fy-hero [class*="frame"],
+  .fy-hero .fy-hero-visual,
+  .fy-hero .fy-hero-media,
+  .fy-hero .fy-hero-frame,
+  .fy-hero .hero-visual,
+  .fy-hero .hero-media,
+  .fy-hero .hero-frame,
+  .fy-hero > :last-child {
+    border-width: 10px !important;
+    border-radius: 24px !important;
+    min-height: 300px !important;
+  }
+}
+/* FORMYRO_EXACT_LIVE_HERO_PATCH_20260610-202204 CSS END */
