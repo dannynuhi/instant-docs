@@ -12,36 +12,42 @@
   <meta name="formyro-live-hero-patch" content="FORMYRO_EXACT_LIVE_HERO_PATCH_20260610-202204">
 <link rel="stylesheet" href="/formyro-exact-live-hero-20260610-202204.css?v=20260610-202204">
 
-<!-- FORMYRO_FORCE_VISIBLE_HERO_IMAGE_FIXED_20260611-094156 STYLE START -->
-<style id="formyro-force-visible-hero-image-style">
-  .formyro-force-visible-hero-frame {
+
+
+
+<!-- FORMYRO_RIGHT_BLUE_RECTANGLE_IMAGE_FIX_20260611-095647 STYLE START -->
+<style id="formyro-right-blue-rectangle-style">
+  .formyro-right-blue-rectangle-photo-target {
     background: #0b45e8 !important;
     border: 18px solid #0b45e8 !important;
     border-radius: 34px !important;
     overflow: hidden !important;
     box-shadow: 0 26px 70px rgba(11, 69, 232, 0.22) !important;
-    min-height: 320px !important;
+    padding: 0 !important;
   }
-  .formyro-force-visible-hero-frame img {
+  .formyro-right-blue-rectangle-photo-target img {
     display: block !important;
     width: 100% !important;
     height: 100% !important;
-    min-height: 320px !important;
+    min-height: 300px !important;
     object-fit: cover !important;
     object-position: center center !important;
+    border-radius: 16px !important;
+  }
+  .formyro-wrong-left-photo-removal {
+    display: none !important;
   }
   @media (max-width: 760px) {
-    .formyro-force-visible-hero-frame {
+    .formyro-right-blue-rectangle-photo-target {
       border-width: 10px !important;
       border-radius: 24px !important;
-      min-height: 280px !important;
     }
-    .formyro-force-visible-hero-frame img {
-      min-height: 280px !important;
+    .formyro-right-blue-rectangle-photo-target img {
+      min-height: 260px !important;
     }
   }
 </style>
-<!-- FORMYRO_FORCE_VISIBLE_HERO_IMAGE_FIXED_20260611-094156 STYLE END -->
+<!-- FORMYRO_RIGHT_BLUE_RECTANGLE_IMAGE_FIX_20260611-095647 STYLE END -->
 
 </head>
 <body>
@@ -117,76 +123,94 @@
 </main><footer class="footer"><strong>Formyro</strong><p>Free templates for everyday work.</p><p><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a> · <a href="/contact.html">Contact</a></p></footer>
 <!-- FORMYRO_FORCE_SERVED_HTML_CSS_PATH 20260609-172054 -->
 
-<!-- FORMYRO_FORCE_VISIBLE_HERO_IMAGE_FIXED_20260611-094156 SCRIPT START -->
-<script id="formyro-force-visible-hero-image-script">
+
+
+
+<!-- FORMYRO_RIGHT_BLUE_RECTANGLE_IMAGE_FIX_20260611-095647 SCRIPT START -->
+<script id="formyro-right-blue-rectangle-script">
 (function() {
-  var marker = "FORMYRO_FORCE_VISIBLE_HERO_IMAGE_FIXED_20260611-094156";
-  var src = "/assets/brand/d.png?v=20260611-094156";
-  function scoreNode(el) {
-    if (!el || !el.getBoundingClientRect) return -9999;
-    var text = ((el.className || "") + " " + (el.id || "")).toLowerCase();
+  var marker = "FORMYRO_RIGHT_BLUE_RECTANGLE_IMAGE_FIX_20260611-095647";
+  var src = "/assets/brand/d.png?v=20260611-095647";
+
+  function rectOk(el) {
+    if (!el || !el.getBoundingClientRect) return false;
     var r = el.getBoundingClientRect();
-    var score = 0;
-    if (text.indexOf("hero") >= 0) score += 40;
-    if (text.indexOf("visual") >= 0) score += 35;
-    if (text.indexOf("media") >= 0) score += 35;
-    if (text.indexOf("frame") >= 0) score += 35;
-    if (text.indexOf("mock") >= 0) score += 25;
-    if (text.indexOf("preview") >= 0) score += 25;
-    if (text.indexOf("image") >= 0) score += 20;
-    if (r.width >= 240) score += 20;
-    if (r.height >= 180) score += 20;
-    if (r.left > window.innerWidth * 0.35) score += 20;
-    if (r.top < window.innerHeight * 0.95) score += 15;
-    if ((el.innerText || "").length > 250) score -= 80;
-    return score;
+    return r.width > 280 && r.height > 160;
   }
-  function applyHeroImage() {
-    var headline = Array.prototype.slice.call(document.querySelectorAll("h1,h2")).find(function(el) {
-      return /Templates for every office task/i.test(el.textContent || "");
-    });
-    var root = headline ? headline.closest("section,header,main,div") : document.querySelector("main") || document.body;
-    var candidates = Array.prototype.slice.call(root.querySelectorAll("picture,img,svg,div,figure,section,aside"));
-    candidates = candidates.filter(function(el) {
-      var txt = ((el.className || "") + " " + (el.id || "")).toLowerCase();
-      return /hero|visual|media|frame|mock|preview|image|card|screen|panel/.test(txt) || el.tagName === "IMG" || el.tagName === "PICTURE" || el.tagName === "SVG";
-    });
-    candidates.sort(function(a, b) { return scoreNode(b) - scoreNode(a); });
-    var target = candidates[0];
-    if (!target) {
-      target = document.createElement("div");
-      target.setAttribute("data-formyro-created-hero-frame", marker);
-      if (headline && headline.parentNode) {
-        headline.parentNode.appendChild(target);
-      } else {
-        document.body.insertBefore(target, document.body.firstChild);
+
+  function removeWrongLeftPhoto() {
+    Array.prototype.slice.call(document.querySelectorAll(".formyro-force-visible-hero-frame, .formyro-direct-hero-photo-frame")).forEach(function(el) {
+      if (!el.getAttribute("data-formyro-right-rectangle")) {
+        el.classList.add("formyro-wrong-left-photo-removal");
       }
-    }
-    if (target.tagName === "IMG") {
-      target.src = src;
-      target.alt = "Blue office folders and documents on a clean desk";
-      target.classList.add("formyro-force-visible-hero-photo");
-      target.parentElement.classList.add("formyro-force-visible-hero-frame");
-      target.parentElement.setAttribute("data-formyro-hero-patch", marker);
-    } else {
-      target.innerHTML = "";
-      target.classList.add("formyro-force-visible-hero-frame");
-      target.setAttribute("data-formyro-hero-patch", marker);
-      var img = document.createElement("img");
-      img.src = src;
-      img.alt = "Blue office folders and documents on a clean desk";
-      img.className = "formyro-force-visible-hero-photo";
-      target.appendChild(img);
-    }
+    });
   }
+
+  function findRightBlueRectangle() {
+    var all = Array.prototype.slice.call(document.querySelectorAll("div,section,aside,figure,article"));
+    var textTarget = all.find(function(el) {
+      var t = (el.textContent || "").replace(/\s+/g, " ").trim();
+      return /Templates/i.test(t) && /Letters/i.test(t) && /Resumes/i.test(t) && /Forms/i.test(t) && /Planners/i.test(t) && rectOk(el);
+    });
+
+    if (textTarget) {
+      var best = textTarget;
+      var p = textTarget.parentElement;
+      while (p && p !== document.body) {
+        var r = p.getBoundingClientRect();
+        var t = (p.textContent || "").replace(/\s+/g, " ").trim();
+        if (r.width > 360 && r.height > 180 && r.left > window.innerWidth * 0.40 && t.length < 500) {
+          best = p;
+        }
+        p = p.parentElement;
+      }
+      return best;
+    }
+
+    var scored = all.map(function(el) {
+      var r = el.getBoundingClientRect();
+      var cls = ((el.className || "") + " " + (el.id || "")).toLowerCase();
+      var score = 0;
+      if (r.left > window.innerWidth * 0.45) score += 80;
+      if (r.top > 180 && r.top < 700) score += 40;
+      if (r.width > 360 && r.width < 900) score += 40;
+      if (r.height > 180 && r.height < 520) score += 40;
+      if (/card|panel|frame|visual|media|hero|mock|preview/.test(cls)) score += 35;
+      if ((el.textContent || "").length > 700) score -= 100;
+      return { el: el, score: score };
+    }).filter(function(x) { return x.score > 100; });
+
+    scored.sort(function(a, b) { return b.score - a.score; });
+    return scored.length ? scored[0].el : null;
+  }
+
+  function applyRightPhoto() {
+    removeWrongLeftPhoto();
+
+    var target = findRightBlueRectangle();
+    if (!target) return;
+
+    target.innerHTML = "";
+    target.classList.add("formyro-right-blue-rectangle-photo-target");
+    target.setAttribute("data-formyro-right-rectangle", marker);
+
+    var img = document.createElement("img");
+    img.src = src;
+    img.alt = "Blue office folders and documents on a clean desk";
+    img.setAttribute("data-formyro-right-rectangle-image", marker);
+    target.appendChild(img);
+  }
+
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", applyHeroImage);
+    document.addEventListener("DOMContentLoaded", applyRightPhoto);
   } else {
-    applyHeroImage();
+    applyRightPhoto();
   }
-  window.addEventListener("load", applyHeroImage);
+  window.addEventListener("load", applyRightPhoto);
+  setTimeout(applyRightPhoto, 250);
+  setTimeout(applyRightPhoto, 1000);
 })();
 </script>
-<!-- FORMYRO_FORCE_VISIBLE_HERO_IMAGE_FIXED_20260611-094156 SCRIPT END -->
+<!-- FORMYRO_RIGHT_BLUE_RECTANGLE_IMAGE_FIX_20260611-095647 SCRIPT END -->
 
 </body></html>
