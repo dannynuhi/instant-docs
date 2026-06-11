@@ -11,6 +11,38 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1211518887152940" crossorigin="anonymous"></script>
   <meta name="formyro-live-hero-patch" content="FORMYRO_EXACT_LIVE_HERO_PATCH_20260610-202204">
 <link rel="stylesheet" href="/formyro-exact-live-hero-20260610-202204.css?v=20260610-202204">
+
+<!-- FORMYRO_FORCE_VISIBLE_HERO_IMAGE_FIXED_20260611-094156 STYLE START -->
+<style id="formyro-force-visible-hero-image-style">
+  .formyro-force-visible-hero-frame {
+    background: #0b45e8 !important;
+    border: 18px solid #0b45e8 !important;
+    border-radius: 34px !important;
+    overflow: hidden !important;
+    box-shadow: 0 26px 70px rgba(11, 69, 232, 0.22) !important;
+    min-height: 320px !important;
+  }
+  .formyro-force-visible-hero-frame img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 320px !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+  }
+  @media (max-width: 760px) {
+    .formyro-force-visible-hero-frame {
+      border-width: 10px !important;
+      border-radius: 24px !important;
+      min-height: 280px !important;
+    }
+    .formyro-force-visible-hero-frame img {
+      min-height: 280px !important;
+    }
+  }
+</style>
+<!-- FORMYRO_FORCE_VISIBLE_HERO_IMAGE_FIXED_20260611-094156 STYLE END -->
+
 </head>
 <body>
 <header class="topbar"><div class="brand">Formyro</div><nav class="nav"><a href="#job">Job</a><a href="#student">Student</a><a href="#office">Office</a><a href="#business">Business</a><a href="#printable">Printable</a></nav></header>
@@ -84,4 +116,77 @@
 <section id="affiliate" class="affiliate"><h2>Recommended office tools and supplies</h2><p>No data available</p><p>Affiliate placements will be selected by the affiliate database program only after real approved affiliate records exist.</p></section>
 </main><footer class="footer"><strong>Formyro</strong><p>Free templates for everyday work.</p><p><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a> · <a href="/contact.html">Contact</a></p></footer>
 <!-- FORMYRO_FORCE_SERVED_HTML_CSS_PATH 20260609-172054 -->
+
+<!-- FORMYRO_FORCE_VISIBLE_HERO_IMAGE_FIXED_20260611-094156 SCRIPT START -->
+<script id="formyro-force-visible-hero-image-script">
+(function() {
+  var marker = "FORMYRO_FORCE_VISIBLE_HERO_IMAGE_FIXED_20260611-094156";
+  var src = "/assets/brand/d.png?v=20260611-094156";
+  function scoreNode(el) {
+    if (!el || !el.getBoundingClientRect) return -9999;
+    var text = ((el.className || "") + " " + (el.id || "")).toLowerCase();
+    var r = el.getBoundingClientRect();
+    var score = 0;
+    if (text.indexOf("hero") >= 0) score += 40;
+    if (text.indexOf("visual") >= 0) score += 35;
+    if (text.indexOf("media") >= 0) score += 35;
+    if (text.indexOf("frame") >= 0) score += 35;
+    if (text.indexOf("mock") >= 0) score += 25;
+    if (text.indexOf("preview") >= 0) score += 25;
+    if (text.indexOf("image") >= 0) score += 20;
+    if (r.width >= 240) score += 20;
+    if (r.height >= 180) score += 20;
+    if (r.left > window.innerWidth * 0.35) score += 20;
+    if (r.top < window.innerHeight * 0.95) score += 15;
+    if ((el.innerText || "").length > 250) score -= 80;
+    return score;
+  }
+  function applyHeroImage() {
+    var headline = Array.prototype.slice.call(document.querySelectorAll("h1,h2")).find(function(el) {
+      return /Templates for every office task/i.test(el.textContent || "");
+    });
+    var root = headline ? headline.closest("section,header,main,div") : document.querySelector("main") || document.body;
+    var candidates = Array.prototype.slice.call(root.querySelectorAll("picture,img,svg,div,figure,section,aside"));
+    candidates = candidates.filter(function(el) {
+      var txt = ((el.className || "") + " " + (el.id || "")).toLowerCase();
+      return /hero|visual|media|frame|mock|preview|image|card|screen|panel/.test(txt) || el.tagName === "IMG" || el.tagName === "PICTURE" || el.tagName === "SVG";
+    });
+    candidates.sort(function(a, b) { return scoreNode(b) - scoreNode(a); });
+    var target = candidates[0];
+    if (!target) {
+      target = document.createElement("div");
+      target.setAttribute("data-formyro-created-hero-frame", marker);
+      if (headline && headline.parentNode) {
+        headline.parentNode.appendChild(target);
+      } else {
+        document.body.insertBefore(target, document.body.firstChild);
+      }
+    }
+    if (target.tagName === "IMG") {
+      target.src = src;
+      target.alt = "Blue office folders and documents on a clean desk";
+      target.classList.add("formyro-force-visible-hero-photo");
+      target.parentElement.classList.add("formyro-force-visible-hero-frame");
+      target.parentElement.setAttribute("data-formyro-hero-patch", marker);
+    } else {
+      target.innerHTML = "";
+      target.classList.add("formyro-force-visible-hero-frame");
+      target.setAttribute("data-formyro-hero-patch", marker);
+      var img = document.createElement("img");
+      img.src = src;
+      img.alt = "Blue office folders and documents on a clean desk";
+      img.className = "formyro-force-visible-hero-photo";
+      target.appendChild(img);
+    }
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", applyHeroImage);
+  } else {
+    applyHeroImage();
+  }
+  window.addEventListener("load", applyHeroImage);
+})();
+</script>
+<!-- FORMYRO_FORCE_VISIBLE_HERO_IMAGE_FIXED_20260611-094156 SCRIPT END -->
+
 </body></html>
